@@ -13,12 +13,17 @@
 
         <!-- Titre de la page -->
         <div class="flex justify-center mb-6">
-            <h1 class="text-2xl font-bold text-indigo-600">Connexion</h1>
+            <h1 class="text-2xl font-bold text-indigo-600">Inscription</h1>
         </div>
 
         <!-- Formulaire de connexion -->
         <form action="#" method="POST" class="space-y-6">
 
+            <div>
+                <label for="nom" class="text-sm font-medium text-gray-700">Nom</label>
+                <input type="nom" id="nom" name="nom" required
+                    class="mt-2 w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
+            </div>
             <!-- Champ Email -->
             <div>
                 <label for="email" class="text-sm font-medium text-gray-700">Email</label>
@@ -37,13 +42,13 @@
             <div>
                 <button type="submit"
                     class="w-full bg-indigo-600 text-white py-2 rounded-lg hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
-                    Se Connecter
+                    Creer un compte
                 </button>
             </div>
 
             <!-- Lien d'inscription pour les nouveaux utilisateurs -->
             <div class="text-center text-sm mt-4">
-                <p>Pas encore de compte ? <a href="/signup-form" class="text-indigo-600 hover:text-indigo-700">Créer un compte</a></p>
+                <p>deja un compte ? <a href="/" class="text-indigo-600 hover:text-indigo-700">Se connecter</a></p>
             </div>
         </form>
         
