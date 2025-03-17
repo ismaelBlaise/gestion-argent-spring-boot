@@ -1,10 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion - MoneyManage</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <h1>Hello</h1>
+<body class="bg-gray-50 flex justify-center items-center min-h-screen">
+
+    <!-- Formulaire de connexion -->
+    <div >
+        <!-- Logo -->
+        <div class="flex justify-center mb-8">
+            <h1 class="text-xl">Money Manage</h1>
+        </div>
+
+        <!-- Formulaire de connexion -->
+        <form class="bg-white p-10 rounded-lg shadow-lg w-full sm:w-96" action="#" method="POST" class="space-y-6">
+            
+            <div>
+                <label for="email" class="text-sm font-medium text-gray-700">Email</label>
+                <input type="email" id="email" name="email" required
+                    class="mt-2 w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
+            </div>
+
+            <!-- Mot de passe -->
+            <div>
+                <label for="password" class="text-sm font-medium text-gray-700">Mot de Passe</label>
+                <input type="password" id="password" name="password" required
+                    class="mt-2 w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
+            </div>
+
+            <!-- Bouton de connexion -->
+            <div>
+                <button type="submit"
+                    class="w-full bg-indigo-600 text-white py-2 rounded-lg hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+                    Se Connecter
+                </button>
+            </div>
+        </form>
+
+        
+    </div>
+
 </body>
 </html>
