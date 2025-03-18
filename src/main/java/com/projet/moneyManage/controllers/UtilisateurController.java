@@ -40,6 +40,7 @@ public class UtilisateurController {
         ModelAndView modelAndView = new ModelAndView("signup");
         try {
             utilisateurService.signup(nom, email, mdp);
+            modelAndView.addObject("succes", "inscription reussi");
         }catch (Exception e) {
             modelAndView.addObject("erreur", e.getMessage());
         }
