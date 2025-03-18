@@ -48,4 +48,9 @@ public class UtilisateurService {
             throw new Exception("Adresse email deja utilisé");
         }
     }
+
+
+    public Utilisateur findById(Long idUtilisateur){
+        return utilisateurRepository.findById(idUtilisateur).get();
+    }
 }
