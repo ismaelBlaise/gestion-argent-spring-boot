@@ -10,5 +10,5 @@ public class StatutDetteService {
     @Autowired
     private StatutDetteRepository statutDetteRepository;
 
-    public List
+
 }
