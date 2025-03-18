@@ -26,4 +26,9 @@ public class RevenuService {
         }
         return revenuRepository.findAllByUtilisateur(utilisateur.get());
     }
+
+
+    public void addRevenu(Revenu revenu){
+        
+    }
 }
