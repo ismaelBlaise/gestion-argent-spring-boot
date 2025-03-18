@@ -72,4 +72,21 @@ public class DepenseController {
         modelAndView.addObject("types", typeDepenseService.findAll());
         return modelAndView;
     }
+
+    @GetMapping("/delete")
+    public ModelAndView delete(@RequestParam Long id){
+        ModelAndView modelAndView=new ModelAndView("redirect:/depenses");
+        try {
+            Depense depense=depenseService.findById(id);
+            depenseService.deleteDepense(depense);
+        } catch (Exception e) {
+            
+            modelAndView.addObject("erreur", e.getMessage());
+            modelAndView.setViewName("template");
+            modelAndView.addObject("page","depenses/depenses");
+
+        }
+        return modelAndView;
+    }
 }
+
