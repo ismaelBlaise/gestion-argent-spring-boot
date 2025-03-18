@@ -34,4 +34,17 @@ public class UtilisateurController {
 
         return modelAndView;
     }
+
+    @PostMapping("/signup")
+    public ModelAndView signup(@RequestParam String nom,@RequestParam String email,@RequestParam String mdp){
+        ModelAndView modelAndView = new ModelAndView("signup");
+        try {
+            utilisateurService.signup(nom, email, mdp);
+            modelAndView.addObject("succes", "inscription reussi");
+        }catch (Exception e) {
+            modelAndView.addObject("erreur", e.getMessage());
+        }
+
+        return modelAndView;
+    }
 }

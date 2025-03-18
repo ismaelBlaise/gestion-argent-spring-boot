@@ -33,4 +33,19 @@ public class UtilisateurService {
             throw new Exception("Adresse email introuvable");
         }
     } 
+
+
+    public void signup(String nom,String email,String motDePasse) throws  Exception{
+        Optional<Utilisateur> utilisateur=utilisateurRepository.findByEmail(email);
+        if(utilisateur.isPresent()){
+            Utilisateur utilisateur1=new Utilisateur();
+            utilisateur1.setNom(nom);
+            utilisateur1.setEmail(email);
+            utilisateur1.setMotDePasse(bCryptPasswordEncoder.encode(motDePasse));
+            utilisateurRepository.save(utilisateur1);
+
+        }else{
+            throw new Exception("Adresse email deja utilisé");
+        }
+    }
 }
