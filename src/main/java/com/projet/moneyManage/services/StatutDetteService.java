@@ -9,4 +9,6 @@ import com.projet.moneyManage.repositories.StatutDetteRepository;
 public class StatutDetteService {
     @Autowired
     private StatutDetteRepository statutDetteRepository;
+
+    public List
 }
