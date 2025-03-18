@@ -82,9 +82,11 @@ public class RevenuController {
             Revenu revenu=revenuService.findById(id);
             revenuService.deleteRevenu(revenu);
         } catch (Exception e) {
+            
             modelAndView.addObject("erreur", e.getMessage());
             modelAndView.setViewName("template");
             modelAndView.addObject("page","revenus/revenus");
+
         }
         return modelAndView;
     }
