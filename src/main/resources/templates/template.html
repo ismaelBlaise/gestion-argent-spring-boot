@@ -51,19 +51,19 @@
                 </li>
 
                 <li>
-                    <a href="@{/depenses}" class="flex items-center text-gray-700 hover:bg-gray-200 p-2 rounded">
+                    <a href="/depenses" class="flex items-center text-gray-700 hover:bg-gray-200 p-2 rounded">
                         <i class="bi bi-cash-coin mr-2"></i> Dépenses
                     </a>
                 </li>
 
                 <li>
-                    <a href="@{/dettes}" class="flex items-center text-gray-700 hover:bg-gray-200 p-2 rounded">
+                    <a href="/dettes" class="flex items-center text-gray-700 hover:bg-gray-200 p-2 rounded">
                         <i class="bi bi-file-earmark-text mr-2"></i> Dettes
                     </a>
                 </li>
 
                 <li>
-                    <a href="@{/limites-depenses}" class="flex items-center text-gray-700 hover:bg-gray-200 p-2 rounded">
+                    <a href="/limites-depenses" class="flex items-center text-gray-700 hover:bg-gray-200 p-2 rounded">
                         <i class="bi bi-shield-lock mr-2"></i> Limites Dépenses
                     </a>
                 </li>
@@ -79,7 +79,7 @@
     </aside>
 
     <main class="ml-64 pt-20 p-6 lg:ml-0">
-        <div th:inculde="${page}"></div>
+        <div th:include="${page}">
     </main>
 
 </body>
