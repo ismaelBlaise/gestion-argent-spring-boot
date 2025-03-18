@@ -73,4 +73,19 @@ public class RevenuController {
         modelAndView.addObject("types", typeRevenuService.findAll());
         return modelAndView;
     }
+
+
+    @GetMapping("/delete")
+    public ModelAndView delete(@RequestParam Long id){
+        ModelAndView modelAndView=new ModelAndView("redirect:/revenus");
+        try {
+            Revenu revenu=revenuService.findById(id);
+            revenuService.deleteRevenu(revenu);
+        } catch (Exception e) {
+            modelAndView.addObject("erreur", e.getMessage());
+            modelAndView.setViewName("template");
+            modelAndView.addObject("page","revenus/revenus");
+        }
+        return modelAndView;
+    }
 }
