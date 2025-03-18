@@ -88,4 +88,37 @@ public class RevenuController {
         }
         return modelAndView;
     }
+
+    @GetMapping("/update-form")
+    public ModelAndView updateForm(@RequestParam Long id){
+        ModelAndView modelAndView=new ModelAndView("template");
+        modelAndView.addObject("page","revenus/modifier");
+        Revenu revenu=revenuService.findById(id);
+        modelAndView.addObject("revenu", revenu);
+        modelAndView.addObject("types", typeRevenuService.findAll());
+        return modelAndView;
+    }
+
+
+    @PostMapping("/update")
+    public ModelAndView update(@RequestParam Long idRevenu,@RequestParam Double montant,@RequestParam LocalDateTime dateRevenu,@RequestParam Long idTypeRevenu ,HttpSession httpSession){
+        ModelAndView modelAndView=new ModelAndView("template");
+        try {
+            Long idUtilisateur=(Long) httpSession.getAttribute("utilisateurId");
+            Revenu revenu=new Revenu();
+            revenu.setIdRevenu(idRevenu);
+            revenu.setMontant(montant);
+            revenu.setDateRevenu(dateRevenu);
+            revenu.setTypeRevenu(typeRevenuService.findById(idTypeRevenu));
+            revenu.setUtilisateur(utilisateurService.findById(idUtilisateur));
+            revenuService.saveRevenu(revenu);
+            modelAndView.addObject("succes","Revenu modifier avec succes");
+        } catch (Exception e) {
+            modelAndView.addObject("erreur",e.getMessage());
+        }
+        modelAndView.addObject("revenu", revenuService.findById(idRevenu));
+        modelAndView.addObject("page","revenus/modifier");
+        modelAndView.addObject("types", typeRevenuService.findAll());
+        return modelAndView;
+    }
 }
