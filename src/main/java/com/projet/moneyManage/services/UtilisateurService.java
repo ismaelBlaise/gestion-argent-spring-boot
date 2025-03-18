@@ -41,7 +41,7 @@ public class UtilisateurService {
             Utilisateur utilisateur1=new Utilisateur();
             utilisateur1.setNom(nom);
             utilisateur1.setEmail(email);
-            utilisateur1.setMotDePasse(motDePasse);
+            utilisateur1.setMotDePasse(bCryptPasswordEncoder.encode(motDePasse));
             utilisateurRepository.save(utilisateur1);
 
         }else{
