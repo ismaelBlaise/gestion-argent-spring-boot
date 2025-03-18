@@ -113,6 +113,7 @@ public class DepenseController {
             depense.setTypeDepense(typeDepenseService.findById(idTypeDepense));
             depense.setUtilisateur(utilisateurService.findById(idUtilisateur));
             depenseService.saveDepense(depense);
+            
             modelAndView.addObject("succes","Depense modifier avec succes");
         } catch (Exception e) {
             modelAndView.addObject("erreur",e.getMessage());
