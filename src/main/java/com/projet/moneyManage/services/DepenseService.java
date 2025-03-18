@@ -28,4 +28,17 @@ public class DepenseService {
         }
         return depenseRepository.findAllByUtilisateur(utilisateur.get());   
     }
+
+
+    public void saveDepense(Depense depense){
+        depenseRepository.save(depense);
+    }
+
+    public void deleteDepense(Depense depense){
+        depenseRepository.delete(depense);
+    }
+
+    public Depense findById(Long id){
+        return depenseRepository.findById(id).get();
+    }
 }

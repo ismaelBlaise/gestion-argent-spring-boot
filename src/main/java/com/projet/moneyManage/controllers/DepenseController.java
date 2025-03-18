@@ -31,4 +31,6 @@ public class DepenseController {
         }
         return modelAndView;
     }
+
+    @GetMapping
 }
