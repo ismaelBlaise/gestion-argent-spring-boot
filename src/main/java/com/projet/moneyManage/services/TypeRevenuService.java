@@ -16,4 +16,9 @@ public class TypeRevenuService {
     public List<TypeRevenu>  findAll(){
         return typeRevenuRepository.findAll();
     }
+
+    public TypeRevenu findById(Long idTypeRevenu){
+        return typeRevenuRepository.findById(idTypeRevenu).get();
+
+    }
 }

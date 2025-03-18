@@ -27,7 +27,7 @@ public class UtilisateurController {
             Utilisateur utilisateur = utilisateurService.login(email, mdp);
             
             session.setAttribute("utilisateurId", utilisateur.getIdUtilisateur());
-            modelAndView.addObject("page", "accueil");
+            modelAndView.addObject("page", "pages/accueil");
         } catch (Exception e) {
             modelAndView.setViewName("index");
             modelAndView.addObject("erreur", e.getMessage());

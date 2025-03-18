@@ -22,9 +22,9 @@
 
         <div>
             <label for="idTypeRevenu" class="block text-gray-700 font-medium mb-2">Type de revenu</label>
-            <select id="idTypeRevenu" name="revenu.idTypeRevenu" required
+            <select id="idTypeRevenu" name="idTypeRevenu" required
                 class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
-                <option th:each="typeRevenu : ${types-revenu}" th:value="${typeRevenu.idTypeRevenu}" th:text="${typeRevenu.nom}"></option>
+                <option th:each="typeRevenu : ${types}" th:value="${typeRevenu.idTypeRevenu}" th:text="${typeRevenu.nom}"></option>
             </select>
         </div>
 
