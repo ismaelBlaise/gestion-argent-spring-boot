@@ -27,7 +27,7 @@
                     <td class="px-4 py-3 border-b" th:text="${revenu.dateRevenu}"></td>
                     <td class="px-4 py-3 border-b" th:text="${revenu.typeRevenu.nom}"></td>
                     <td class="px-4 py-3 border-b flex space-x-2">
-                        <a th:href="@{/revenus-update-form?id={idRevenu}(idRevenu=${revenu.idRevenu})}">
+                        <a th:href="@{/revenus/update-form?id={idRevenu}(idRevenu=${revenu.idRevenu})}">
                             <button class="text-blue-500 hover:text-blue-700">Modifier</button>
                         </a>
                         <a th:href="@{/revenus/delete?id={idRevenu}(idRevenu=${revenu.idRevenu})}">
