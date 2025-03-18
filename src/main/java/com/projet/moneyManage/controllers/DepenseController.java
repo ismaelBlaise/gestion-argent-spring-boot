@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import com.projet.moneyManage.models.Depense;
-import com.projet.moneyManage.models.Revenu;
 import com.projet.moneyManage.services.DepenseService;
 import com.projet.moneyManage.services.TypeDepenseService;
 import com.projet.moneyManage.services.UtilisateurService;
@@ -86,6 +85,41 @@ public class DepenseController {
             modelAndView.addObject("page","depenses/depenses");
 
         }
+        return modelAndView;
+    }
+
+
+    @GetMapping("/update-form")
+    public ModelAndView updateForm(@RequestParam Long id){
+        ModelAndView modelAndView=new ModelAndView("template");
+        modelAndView.addObject("page","depenses/modifier");
+        Depense depense=depenseService.findById(id);
+        modelAndView.addObject("depense",depense);
+        modelAndView.addObject("types", typeDepenseService.findAll());
+        return modelAndView;
+    }
+
+
+    @PostMapping("/update")
+    public ModelAndView update(@RequestParam Long idDepense,@RequestParam Double montant,@RequestParam LocalDateTime dateDepense,@RequestParam String raison,@RequestParam Long idTypeDepense ,HttpSession httpSession){
+        ModelAndView modelAndView=new ModelAndView("template");
+        try {
+            Long idUtilisateur=(Long) httpSession.getAttribute("utilisateurId");
+            Depense depense=new Depense();
+            depense.setIdDepense(idDepense);
+            depense.setMontant(montant);
+            depense.setRaison(raison);
+            depense.setDateDepense(dateDepense);
+            depense.setTypeDepense(typeDepenseService.findById(idTypeDepense));
+            depense.setUtilisateur(utilisateurService.findById(idUtilisateur));
+            depenseService.saveDepense(depense);
+            modelAndView.addObject("succes","Depense modifier avec succes");
+        } catch (Exception e) {
+            modelAndView.addObject("erreur",e.getMessage());
+        }
+        modelAndView.addObject("depense", depenseService.findById(idDepense));
+        modelAndView.addObject("page","depenses/modifier");
+        modelAndView.addObject("types", typeDepenseService.findAll());
         return modelAndView;
     }
 }
