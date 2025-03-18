@@ -12,7 +12,7 @@ import jakarta.persistence.*;
 public class LimiteDepense {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_limite_depense")
     private Long idLimiteDepense;
 

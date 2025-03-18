@@ -13,7 +13,7 @@ import java.time.LocalDateTime;
 public class Depense {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_depense")
     private Long idDepense;
 

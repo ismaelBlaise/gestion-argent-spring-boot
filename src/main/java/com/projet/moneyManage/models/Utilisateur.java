@@ -13,7 +13,7 @@ import java.util.Set;
 public class Utilisateur {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_utilisateur")
     private Long idUtilisateur;
 

@@ -13,7 +13,7 @@ import java.util.Set;
 public class TypeDette {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_type_dette")
     private Long idTypeDette;
 

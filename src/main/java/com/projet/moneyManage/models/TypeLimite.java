@@ -13,7 +13,7 @@ import java.util.Set;
 public class TypeLimite {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_type_limite")
     private Long idTypeLimite;
 

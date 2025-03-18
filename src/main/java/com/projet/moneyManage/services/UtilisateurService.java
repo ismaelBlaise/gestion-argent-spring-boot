@@ -19,9 +19,9 @@ public class UtilisateurService {
 
     public Utilisateur login(String email,String motDePasse) throws Exception{
         Optional<Utilisateur> utilisateur=utilisateurRepository.findByEmail(email);
-        if(!utilisateur.isPresent()){
+        if(utilisateur.isPresent()){
             Utilisateur utilisateur2=utilisateur.get();
-            if(bCryptPasswordEncoder.matches(email, motDePasse)){
+            if(bCryptPasswordEncoder.matches(motDePasse, utilisateur2.getMotDePasse())){
                 return utilisateur2;
                 
             }
