@@ -45,7 +45,7 @@
         <nav class="px-4 py-6">
             <ul class="space-y-4">
                 <li>
-                    <a href="@{/revenus}" class="flex items-center text-gray-700 hover:bg-gray-200 p-2 rounded">
+                    <a href="/revenus" class="flex items-center text-gray-700 hover:bg-gray-200 p-2 rounded">
                         <i class="bi bi-wallet mr-2"></i> Revenus
                     </a>
                 </li>
@@ -79,6 +79,7 @@
     </aside>
 
     <main class="ml-64 pt-20 p-6 lg:ml-0">
+        <div th:inculde="${page}"></div>
     </main>
 
 </body>
