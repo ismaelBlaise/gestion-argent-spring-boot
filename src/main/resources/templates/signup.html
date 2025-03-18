@@ -8,15 +8,16 @@
 </head>
 <body class="bg-gray-50 flex justify-center items-center min-h-screen">
 
-    <!-- Conteneur du formulaire de connexion -->
     <div class="bg-white p-10 rounded-lg shadow-lg w-full sm:w-96">
 
-        <!-- Titre de la page -->
+        
         <div class="flex justify-center mb-6">
             <h1 class="text-2xl font-bold text-indigo-600">Inscription</h1>
         </div>
 
-        <!-- Formulaire de connexion -->
+        <div th:if="${erreur}" class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-4">
+            <strong>Erreur :</strong> <span th:text="${erreur}"></span>
+        </div>
         <form action="#" method="POST" class="space-y-6">
 
             <div>
@@ -24,21 +25,18 @@
                 <input type="nom" id="nom" name="nom" required
                     class="mt-2 w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
             </div>
-            <!-- Champ Email -->
             <div>
                 <label for="email" class="text-sm font-medium text-gray-700">Email</label>
                 <input type="email" id="email" name="email" required
                     class="mt-2 w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
             </div>
 
-            <!-- Champ Mot de Passe -->
             <div>
                 <label for="password" class="text-sm font-medium text-gray-700">Mot de Passe</label>
                 <input type="password" id="password" name="password" required
                     class="mt-2 w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
             </div>
 
-            <!-- Bouton de Connexion -->
             <div>
                 <button type="submit"
                     class="w-full bg-indigo-600 text-white py-2 rounded-lg hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
@@ -46,7 +44,6 @@
                 </button>
             </div>
 
-            <!-- Lien d'inscription pour les nouveaux utilisateurs -->
             <div class="text-center text-sm mt-4">
                 <p>deja un compte ? <a href="/" class="text-indigo-600 hover:text-indigo-700">Se connecter</a></p>
             </div>
