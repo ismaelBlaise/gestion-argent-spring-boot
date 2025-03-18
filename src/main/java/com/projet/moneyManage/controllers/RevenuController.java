@@ -10,6 +10,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.projet.moneyManage.models.Revenu;
 import com.projet.moneyManage.services.RevenuService;
+import com.projet.moneyManage.services.TypeRevenuService;
 
 import jakarta.servlet.http.HttpSession;
 
@@ -18,6 +19,9 @@ import jakarta.servlet.http.HttpSession;
 public class RevenuController {
     @Autowired 
     private RevenuService revenuService;
+
+    @Autowired
+    private TypeRevenuService typeRevenuService;
 
     @GetMapping
     public ModelAndView findAllByUtilisateur(HttpSession httpSession){
@@ -30,6 +34,15 @@ public class RevenuController {
         } catch (Exception e) {
             modelAndView.addObject("erreur",e.getMessage());
         }
+        return modelAndView;
+    }
+
+
+    @GetMapping("/add-form")
+    public ModelAndView addForm(){
+        ModelAndView modelAndView=new ModelAndView("template");
+        modelAndView.addObject("page","revenus/ajout");
+        modelAndView.addObject("types-revenu", typeRevenuService.findAll());
         return modelAndView;
     }
 }

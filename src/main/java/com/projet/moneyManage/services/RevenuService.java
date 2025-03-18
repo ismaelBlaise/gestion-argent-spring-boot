@@ -27,8 +27,19 @@ public class RevenuService {
         return revenuRepository.findAllByUtilisateur(utilisateur.get());
     }
 
-
-    public void addRevenu(Revenu revenu){
-        
+    public Revenu findById(Long idRevenu){
+        return revenuRepository.findById(idRevenu).get();
     }
+
+    public void saveRevenu(Revenu revenu){
+        revenuRepository.save(revenu);
+    }
+
+
+    public void deleteRevenu(Revenu revenu){
+        revenuRepository.delete(revenu);
+    }
+
+
+    
 }
