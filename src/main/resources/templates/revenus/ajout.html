@@ -7,7 +7,10 @@
             <p th:text="${erreur}"></p>
         </div>
 
-        
+        <div th:if="${succes}" class="bg-green-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-4">
+            <span th:text="${succes}"></span>
+       </div>
+       
         <div>
             <label for="montant" class="block text-gray-700 font-medium mb-2">Montant</label>
             <input type="number" step="0.01" id="montant" name="montant" required placeholder="Entrer le montant du revenu"
