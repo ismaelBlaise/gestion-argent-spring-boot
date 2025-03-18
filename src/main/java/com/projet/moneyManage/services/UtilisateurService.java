@@ -19,7 +19,7 @@ public class UtilisateurService {
 
     public Utilisateur login(String email,String motDePasse) throws Exception{
         Optional<Utilisateur> utilisateur=utilisateurRepository.findByEmail(email);
-        if(utilisateur.isPresent()){
+        if(!utilisateur.isPresent()){
             Utilisateur utilisateur2=utilisateur.get();
             if(bCryptPasswordEncoder.matches(email, motDePasse)){
                 return utilisateur2;
@@ -37,7 +37,7 @@ public class UtilisateurService {
 
     public void signup(String nom,String email,String motDePasse) throws  Exception{
         Optional<Utilisateur> utilisateur=utilisateurRepository.findByEmail(email);
-        if(utilisateur.isPresent()){
+        if(!utilisateur.isPresent()){
             Utilisateur utilisateur1=new Utilisateur();
             utilisateur1.setNom(nom);
             utilisateur1.setEmail(email);
