@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -45,25 +45,25 @@
         <nav class="px-4 py-6">
             <ul class="space-y-4">
                 <li>
-                    <a href="@{/revenus}" class="flex items-center text-gray-700 hover:bg-gray-200 p-2 rounded">
+                    <a href="/revenus" class="flex items-center text-gray-700 hover:bg-gray-200 p-2 rounded">
                         <i class="bi bi-wallet mr-2"></i> Revenus
                     </a>
                 </li>
 
                 <li>
-                    <a href="@{/depenses}" class="flex items-center text-gray-700 hover:bg-gray-200 p-2 rounded">
+                    <a href="/depenses" class="flex items-center text-gray-700 hover:bg-gray-200 p-2 rounded">
                         <i class="bi bi-cash-coin mr-2"></i> Dépenses
                     </a>
                 </li>
 
                 <li>
-                    <a href="@{/dettes}" class="flex items-center text-gray-700 hover:bg-gray-200 p-2 rounded">
+                    <a href="/dettes" class="flex items-center text-gray-700 hover:bg-gray-200 p-2 rounded">
                         <i class="bi bi-file-earmark-text mr-2"></i> Dettes
                     </a>
                 </li>
 
                 <li>
-                    <a href="@{/limites-depenses}" class="flex items-center text-gray-700 hover:bg-gray-200 p-2 rounded">
+                    <a href="/limites-depenses" class="flex items-center text-gray-700 hover:bg-gray-200 p-2 rounded">
                         <i class="bi bi-shield-lock mr-2"></i> Limites Dépenses
                     </a>
                 </li>
@@ -79,6 +79,7 @@
     </aside>
 
     <main class="ml-64 pt-20 p-6 lg:ml-0">
+        <div th:include="${page}">
     </main>
 
 </body>
