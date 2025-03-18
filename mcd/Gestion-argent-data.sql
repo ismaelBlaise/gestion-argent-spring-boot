@@ -7,3 +7,9 @@ INSERT INTO types_revenu (nom) VALUES
 ('Dividendes'),
 ('Location'),
 ('Autre');
+
+
+INSERT INTO types_depense (nom) VALUES
+('Transport'),
+('Nourriture'),
+('Loisirs');

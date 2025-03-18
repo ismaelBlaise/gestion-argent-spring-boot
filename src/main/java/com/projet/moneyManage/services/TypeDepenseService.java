@@ -16,4 +16,8 @@ public class TypeDepenseService {
     public List<TypeDepense> findAll(){
         return typeDepenseRepository.findAll();
     }
+
+    public TypeDepense findById(Long id){
+        return typeDepenseRepository.findById(id).get();
+    }
 }
